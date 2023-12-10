@@ -16,6 +16,7 @@ const mongoDB=async()=>{
         const a= await col.find({}).toArray();
         console.log('db.js is fine');
         global.books=a;
+        //global.data=col;
     }
     catch(err){
         console.log(err.stack);

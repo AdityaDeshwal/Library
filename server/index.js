@@ -11,6 +11,7 @@ mongoDB();
 app.use(express.json())
 app.use('/api',require("./Routes/DisplayBooks.js"));
 app.use('/api',require("./Routes/AddBook.js"));
+app.use('/api',require("./Routes/UpdateBook.js"));
 
  app.get('/',(req,res)=>{
     res.send("Hello World")
