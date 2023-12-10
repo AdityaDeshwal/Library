@@ -11,18 +11,27 @@ async(req,res)=>{
     if(!errors.isEmpty){
         return res.status(400).json({errors:errors.array});
     }
-    try{
-        await bookSchema.create({
-            serial_no:req.body.serial_no,
-            book_name:req.body.book_name,
-            genre:req.body.genre
-        });
-        res.json({success:true})
-        //process.exit(1);
+    let matches=await bookSchema.find({ serial_no: req.body.serial_no});
+    //console.log(matches.length);
+    if(matches.length!=0){
+        //console.log("This Serial number already in record");
+        res.json({success:false,
+            reason:"This Serial number is already in record, can't add this"})
     }
-    catch(error){
-        console.log(error);
-        res.json({success:false});
+    else{
+        try{
+            await bookSchema.create({
+                serial_no:req.body.serial_no,
+                book_name:req.body.book_name,
+                genre:req.body.genre
+            });
+            res.json({success:true})
+            //process.exit(1);
+        }
+        catch(error){
+            console.log(error);
+            res.json({success:false});
+        }
     }
 });
 
