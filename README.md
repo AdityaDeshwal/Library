@@ -1,5 +1,6 @@
 This is backend for Library app.
 It is tested using thunder client.
+It is connected to MongoDB Atlas.
 This have three endpoints. They are as:
 1. http://localhost:5000/api/DisplayBooks
    This displays name of all the books in library and their genre.
