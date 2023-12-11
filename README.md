@@ -28,7 +28,6 @@ This have three endpoints. They are as:
     }
    It finds the book with its given serial number in input and update its name and genre provided in input.
 
-*Previously it was having a bug, that after adding or updating book if you attempt for DisplayBooks so changes are not visible until we start the server again.* *Changes are visible on restating server. The data 
-is stored on MongoDB cloud.*
-//
-*This bug has been removed*
+Previously it was having a bug, that after adding or updating book if you attempt for DisplayBooks so changes are not visible until we start the server again. Changes are visible on restating server. The data 
+is stored on MongoDB cloud.
+(*This bug has been removed*)
