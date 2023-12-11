@@ -1,14 +1,16 @@
 const express=require("express");
 const router=express.Router();
+const bookSchema=require("../models/bookSchema");
 
 
-router.post('/DisplayBooks',(req,res)=>{
+router.post('/DisplayBooks',async(req,res)=>{
     const book_names_set=new Set();
     let book_names=[]; 
-    //console.log('we are here');
-    for(var key in global.books){
+    const data=await bookSchema.find({});
+    // //console.log('we are here');
+    for(var key in data){
         //console.log(global.books[key].book_name)
-        book_names_set.add(global.books[key].book_name + " with genre " + global.books[key].genre)
+        book_names_set.add(data[key].book_name + " with genre " + data[key].genre)
     }
     for(const item of book_names_set){
         //console.log(item)
