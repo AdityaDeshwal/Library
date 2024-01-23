@@ -10,7 +10,7 @@ router.post('/DisplayBooks',async(req,res)=>{
     // //console.log('we are here');
     for(var key in data){
         //console.log(global.books[key].book_name)
-        book_names_set.add(data[key].book_name + " with genre " + data[key].genre)
+        book_names_set.add([data[key].book_name,data[key].genre])
     }
     for(const item of book_names_set){
         //console.log(item)
