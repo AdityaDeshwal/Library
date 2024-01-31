@@ -13,6 +13,10 @@ const bookSchema=new Schema({
     genre:{
         type:String,
         required:true
+    },
+    availability:{
+        type:Number,
+        required:true
     }
 });
 

@@ -2,16 +2,19 @@
     {
         "serial_no":"581521",
         "book_name":"Wings of Fire",
-        "genre":"Biography"
+        "genre":"Biography",
+        "availability":1
     },
     {
         "serial_no":"581531",
         "book_name":"My experiments with truth",
-        "genre":"autobiography" 
+        "genre":"autobiography",
+        "availability":1
     },
     {
         "serial_no":"581541",
         "book_name":"A Biography of Swami Vivekananda",
-        "genre":"Biography"
+        "genre":"Biography",
+        "availability":1
     }
 ]

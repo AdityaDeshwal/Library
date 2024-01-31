@@ -17,6 +17,7 @@ app.use(express.json())
 app.use('/api',require("./Routes/DisplayBooks.js"));
 app.use('/api',require("./Routes/AddBook.js"));
 app.use('/api',require("./Routes/UpdateBook.js"));
+app.use('/api',require("./Routes/IssueBooks.js"));
 
  app.get('/',(req,res)=>{
     res.send("Hello World")

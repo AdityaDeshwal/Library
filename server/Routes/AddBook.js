@@ -23,7 +23,8 @@ async(req,res)=>{
             await bookSchema.create({
                 serial_no:req.body.serial_no,
                 book_name:req.body.book_name,
-                genre:req.body.genre
+                genre:req.body.genre,
+                availability:1
             });
             res.json({success:true})
             //process.exit(1);

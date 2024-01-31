@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar";
 import Card from "../Components/Card";
 function Home(){
     const [books,setBooks]=useState([]);
-    const [search,setSearch]=useState([]);
+    const [search,setSearch]=useState('');
     const getBooks=async()=>{
         await fetch('http://localhost:5000/api/DisplayBooks',{
         method:'POST',
@@ -46,13 +46,13 @@ function Home(){
             }) */
             books.filter((item)=>
             (
-                (item[0].toLowerCase().includes(search.toLowerCase()) || item[1].toLowerCase().includes(search.toLowerCase()) )
+                (  (item.book_name.toLowerCase().includes(search.toLowerCase()) || item.genre.toLowerCase().includes(search.toLowerCase())) /*&& item[2]===1*/ )
                 )
             )
             .map((filteritems)=>{
                 return (
                     <div className="col-sm-2">
-                    <Card name={filteritems[0]} genre={filteritems[1]}/>
+                    <Card name={filteritems.book_name} genre={filteritems.genre} serial_no={filteritems.serial_no} availability={filteritems.availability}/>
                     </div>
                 );
             })
